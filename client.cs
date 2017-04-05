@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // Torque Game Engine
 // Copyright (C) GarageGames.com, Inc.
 //-----------------------------------------------------------------------------
@@ -3178,6 +3178,39 @@ function beginTurning( %node )
 	}
 }
 
+//$XuanZhuanDengJi为0-10,为0时机台不动,为1-10时机台有动感.
+$XuanZhuanDengJi = 5;
+$XuanZhuangVal[0,0]=1;
+$XuanZhuangVal[0,1]=5;
+$XuanZhuangVal[0,2]=10;
+$XuanZhuangVal[1,0]=2;
+$XuanZhuangVal[1,1]=6;
+$XuanZhuangVal[1,2]=11;
+$XuanZhuangVal[2,0]=3;
+$XuanZhuangVal[2,1]=6;
+$XuanZhuangVal[2,2]=11;
+$XuanZhuangVal[3,0]=3;
+$XuanZhuangVal[3,1]=7;
+$XuanZhuangVal[3,2]=12;
+$XuanZhuangVal[4,0]=4;
+$XuanZhuangVal[4,1]=7;
+$XuanZhuangVal[4,2]=12;
+$XuanZhuangVal[5,0]=4;
+$XuanZhuangVal[5,1]=8;
+$XuanZhuangVal[5,2]=13;
+$XuanZhuangVal[6,0]=5;
+$XuanZhuangVal[6,1]=8;
+$XuanZhuangVal[6,2]=13;
+$XuanZhuangVal[7,0]=5;
+$XuanZhuangVal[7,1]=9;
+$XuanZhuangVal[7,2]=14;
+$XuanZhuangVal[8,0]=6;
+$XuanZhuangVal[8,1]=9;
+$XuanZhuangVal[8,2]=14;
+$XuanZhuangVal[9,0]=6;
+$XuanZhuangVal[9,1]=10;
+$XuanZhuangVal[9,2]=15;
+
 function setTurnRotation(%rotation, %speed, %flag)
 {//warn("setTurnRotation======",%rotation,"=", %speed, " " ,anquandai2.isVisible() , " ", anquandai2P2.isVisible(), " " , !$initializeResult, " ", $urgentStopRotate, " ", $zhixingTimes, " ", $rotateSpeed);
 	if (anquandai2.isVisible() || anquandai2P2.isVisible() || !$initializeResult || $urgentStopRotate || $gameEndNow)
@@ -3199,6 +3232,15 @@ function setTurnRotation(%rotation, %speed, %flag)
 	if (!%flag || %speed == 0)
 	$rotateSpeed = %speed;
 	
+    if ($XuanZhuanDengJi == 0) {
+        %speed = 0;
+        %rotation = 0;
+    }
+    else {
+        %indexV1 = $XuanZhuanDengJi - 1;
+        %indexV2 = %speed == 0 ? 0 : %speed - 1;
+        %speed = $XuanZhuangVal[%indexV1,%indexV2];
+    }
 	PCVRSetTurnRotation(%rotation, %speed);
 }
 
