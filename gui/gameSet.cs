@@ -203,6 +203,7 @@ function gamesetGui::onWake(%this)
 	doudongLevel.setText($HurtShakeIndex);
 	zhuandongLevelP1.setText($ZhuandongIndexP1);
 	zhuandongLevelP2.setText($ZhuandongIndexP2);
+    JiTaiZhuanSu.setText($XuanZhuanDengJi);
 }
 
 function gamesetGui::onSleep(%this)
@@ -217,6 +218,7 @@ function Btn6::onAction(%this)
 	$RunDays = mfloor(($BeforeTime1 - $BeforeTime)/24/60/60);
 	
 	$RequestCoinNum = $TextIndex;
+    WriteIniValueString("Record", "XuanZhuanDengJi", $XuanZhuanDengJi, "./Detail.hnb");
 	WriteIniValueString("Record", "CoinCount", $TextIndex, "./Detail.hnb");
 	WriteIniValueString("Record", "HardIndex", $HardIndex, "./Detail.hnb");
 	WriteIniValueString("Record", "ModeIndex", $ModeIndex, "./Detail.hnb");
@@ -475,6 +477,7 @@ function GamesetEnter(%make)
 			$TextIndex = 3;
 			$RequestCoinNum = $TextIndex;
 			TextCoin.setText($TextIndex);
+            JiTaiZhuanSu.setText($XuanZhuanDengJi);
 			
 			$HardIndex = 2;
 			%RadioName = "Hard" @ $HardIndex;
@@ -541,7 +544,7 @@ function GamesetMove(%val)
 		{
 			$BtnIndex++;
 			
-			if( $BtnIndex > 12 )
+			if( $BtnIndex > 13 )
 			{
 				$BtnIndex = 0;
 			}
@@ -600,8 +603,11 @@ function GamesetMove(%val)
 					setGunShakeStateGSet(2, false);
 				case 11:
 					Btn8.setProfile(GuiMenuBarProfile);
-					Btn5.setProfile(GuiMenuButtonProfile);
+					Btn81.setProfile(GuiMenuButtonProfile);
 				case 12:
+					Btn81.setProfile(GuiMenuBarProfile);
+					Btn5.setProfile(GuiMenuButtonProfile);
+				case 13:
 					Btn5.setProfile(GuiMenuBarProfile);
 					Btn6.setProfile(GuiMenuButtonProfile);
 			}
@@ -712,8 +718,15 @@ function GamesetMove(%val)
 					
 					doudongLevel.setText($HurtShakeIndex);
 				case 11:
+                    $XuanZhuanDengJi++;
+                    if ($XuanZhuanDengJi > 10) {
+                        $XuanZhuanDengJi = 0;
+                    }
+                    JiTaiZhuanSu.setText($XuanZhuanDengJi);
+                    WriteIniValueString("Record", "XuanZhuanDengJi", $XuanZhuanDengJi, "./Detail.hnb");
+                case 12:
 					//clear
-				case 12:
+				case 13:
 					//exit
 			}
 			

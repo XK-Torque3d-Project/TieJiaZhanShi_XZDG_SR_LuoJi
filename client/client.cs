@@ -3179,7 +3179,7 @@ function beginTurning( %node )
 }
 
 //$XuanZhuanDengJi为0-10,为0时机台不动,为1-10时机台有动感.
-$XuanZhuanDengJi = 5;
+//$XuanZhuanDengJi = 5; $XuanZhuanDengJi默认值为5.
 $XuanZhuangVal[0,0]=1;
 $XuanZhuangVal[0,1]=5;
 $XuanZhuangVal[0,2]=10;
@@ -3237,10 +3237,17 @@ function setTurnRotation(%rotation, %speed, %flag)
         %rotation = 0;
     }
     else {
-        %indexV1 = $XuanZhuanDengJi - 1;
-        %indexV2 = %speed == 0 ? 0 : %speed - 1;
-        %speed = $XuanZhuangVal[%indexV1,%indexV2];
+        if (%speed != 0) {
+            %indexV1 = $XuanZhuanDengJi - 1;
+            %indexV2 = %speed == 0 ? 0 : %speed - 1;
+            %speed = $XuanZhuangVal[%indexV1,%indexV2];
+        }
+
+        if (%rotation == 1) {
+            %speed += 16; 
+        }
     }
+    //echo("xuanZhuanSpeed -> speed ",%speed,", rotation ",%rotation);
 	PCVRSetTurnRotation(%rotation, %speed);
 }
 
