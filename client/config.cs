@@ -1,0 +1,23 @@
+// Torque Input Map File
+if (isObject(moveMap)) moveMap.delete();
+new ActionMap(moveMap);
+moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
+moveMap.bind(keyboard, "alt c", toggleCamera);
+moveMap.bindCmd(keyboard, "ctrl k", "commandToServer(\'suicide\');", "");
+moveMap.bindCmd(keyboard, "1", "commandToServer(\'use\',\"RocketLauncher\");", "");
+moveMap.bind(keyboard, "0", unmountWeapon);
+moveMap.bind(keyboard, "alt w", throwWeapon);
+moveMap.bind(keyboard, "alt a", tossAmmo);
+moveMap.bind(keyboard, "ctrl q", prevWeapon);
+moveMap.bind(keyboard, "f8", dropCameraAtPlayer);
+moveMap.bind(keyboard, "f7", dropPlayerAtCamera);
+moveMap.bindCmd(keyboard, "ctrl z", "carjack();", "");
+moveMap.bindCmd(keyboard, "ctrl f", "commandToServer(\'flipCar\');", "");
+moveMap.bindCmd(keyboard, "ctrl x", "getout();", "");
+moveMap.bind(keyboard, "r", RocketLauncherAmmo);
+moveMap.bind(keyboard, "m", pressUrgentKey);
+moveMap.bind(mouse0, "xaxis", yaw);
+moveMap.bind(mouse0, "yaxis", pitch);
+moveMap.bind(mouse0, "button0", mouseFire);
+moveMap.bind(mouse0, "button1", altTrigger);
+moveMap.bind(mouse0, "zaxis", mouseWheelWeaponCycle);
