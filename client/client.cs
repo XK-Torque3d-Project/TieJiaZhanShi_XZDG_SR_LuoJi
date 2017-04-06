@@ -3294,7 +3294,7 @@ function doudongNow(%index)
 		setTurnRotation(2, 3, true);
 	}
 	
-	if (%index >= 4)
+	if (%index >= 2)
 	{
 		$rotateSpeed = 0;
 		setTurnRotation(0, 0);
