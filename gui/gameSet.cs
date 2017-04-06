@@ -471,13 +471,15 @@ function GamesetEnter(%make)
 			setGunShakeStateGSet(1, false);
 			setGunShakeStateGSet(2, false);
 		}
-		else if( $BtnIndex == 11 )
+		else if( $BtnIndex == 12 )
 		{
 			//clear infor
 			$TextIndex = 3;
 			$RequestCoinNum = $TextIndex;
 			TextCoin.setText($TextIndex);
+            $XuanZhuanDengJi = 5;
             JiTaiZhuanSu.setText($XuanZhuanDengJi);
+            WriteIniValueString("Record", "XuanZhuanDengJi", $XuanZhuanDengJi, "./Detail.hnb");
 			
 			$HardIndex = 2;
 			%RadioName = "Hard" @ $HardIndex;
@@ -513,7 +515,7 @@ function GamesetEnter(%make)
 			
 			$ChangeItem = !$ChangeItem;
 		}
-		else if( $BtnIndex == 12 )
+		else if( $BtnIndex == 13 )
 		{
 			//exit
 			Btn6.onAction();

@@ -3181,34 +3181,34 @@ function beginTurning( %node )
 //$XuanZhuanDengJi为0-10,为0时机台不动,为1-10时机台有动感.
 //$XuanZhuanDengJi = 5; $XuanZhuanDengJi默认值为5.
 $XuanZhuangVal[0,0]=1;
-$XuanZhuangVal[0,1]=5;
-$XuanZhuangVal[0,2]=10;
-$XuanZhuangVal[1,0]=2;
-$XuanZhuangVal[1,1]=6;
-$XuanZhuangVal[1,2]=11;
-$XuanZhuangVal[2,0]=3;
+$XuanZhuangVal[0,1]=4;
+$XuanZhuangVal[0,2]=11;
+$XuanZhuangVal[1,0]=1;
+$XuanZhuangVal[1,1]=5;
+$XuanZhuangVal[1,2]=12;
+$XuanZhuangVal[2,0]=1;
 $XuanZhuangVal[2,1]=6;
-$XuanZhuangVal[2,2]=11;
-$XuanZhuangVal[3,0]=3;
+$XuanZhuangVal[2,2]=13;
+$XuanZhuangVal[3,0]=1;
 $XuanZhuangVal[3,1]=7;
-$XuanZhuangVal[3,2]=12;
-$XuanZhuangVal[4,0]=4;
-$XuanZhuangVal[4,1]=7;
-$XuanZhuangVal[4,2]=12;
-$XuanZhuangVal[5,0]=4;
-$XuanZhuangVal[5,1]=8;
-$XuanZhuangVal[5,2]=13;
-$XuanZhuangVal[6,0]=5;
-$XuanZhuangVal[6,1]=8;
-$XuanZhuangVal[6,2]=13;
-$XuanZhuangVal[7,0]=5;
+$XuanZhuangVal[3,2]=14;
+$XuanZhuangVal[4,0]=1;
+$XuanZhuangVal[4,1]=8;
+$XuanZhuangVal[4,2]=15;
+$XuanZhuangVal[5,0]=2;
+$XuanZhuangVal[5,1]=9;
+$XuanZhuangVal[5,2]=15;
+$XuanZhuangVal[6,0]=3;
+$XuanZhuangVal[6,1]=9;
+$XuanZhuangVal[6,2]=15;
+$XuanZhuangVal[7,0]=4;
 $XuanZhuangVal[7,1]=9;
-$XuanZhuangVal[7,2]=14;
-$XuanZhuangVal[8,0]=6;
-$XuanZhuangVal[8,1]=9;
-$XuanZhuangVal[8,2]=14;
-$XuanZhuangVal[9,0]=6;
-$XuanZhuangVal[9,1]=10;
+$XuanZhuangVal[7,2]=15;
+$XuanZhuangVal[8,0]=4;
+$XuanZhuangVal[8,1]=10;
+$XuanZhuangVal[8,2]=15;
+$XuanZhuangVal[9,0]=4;
+$XuanZhuangVal[9,1]=11;
 $XuanZhuangVal[9,2]=15;
 
 function setTurnRotation(%rotation, %speed, %flag)
@@ -3294,14 +3294,15 @@ function doudongNow(%index)
 		setTurnRotation(2, 3, true);
 	}
 	
-	if (%index >= 8)
+	if (%index >= 4)
 	{
 		$rotateSpeed = 0;
 		setTurnRotation(0, 0);
 		return;
 	}
-	
-	schedule($HurtShakeValue, 0, doudongNow, (%index + 1));
+
+	//schedule($HurtShakeValue, 0, doudongNow, (%index + 1));	
+	schedule(300, 0, doudongNow, (%index + 1));
 }
 
 function zhixingRotate(%times)
@@ -3363,7 +3364,7 @@ function zhixingNow(%index, %times)
 		setTurnRotation(2, 3, true);
 	}
 	
-	schedule(500, 0, zhixingNow, (%index + 1), %times);
+	schedule(800, 0, zhixingNow, (%index + 1), %times);
 }
 
 //when press the urgent key, will show the information
