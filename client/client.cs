@@ -1538,6 +1538,9 @@ function setJiFenZong( %num, %count, %addScore )
 {
 	if(  %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1589,6 +1592,9 @@ function setHitNum( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore  += %count;
 		%score = %addScore;
 		if( $JiFenKuangMaxNum != 0 )
@@ -1617,6 +1623,9 @@ function setHitScore( %num, %count, %addScore )
 {
 	if(  %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		if( $JiFenKuangMaxNum != 0 )
@@ -1657,6 +1666,9 @@ function setNpcNum( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1692,6 +1704,9 @@ function setNpcScore( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1739,6 +1754,9 @@ function setBossNum( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1768,6 +1786,9 @@ function setBossScore( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1815,6 +1836,9 @@ function setHealthNum( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1847,6 +1871,9 @@ function setHealthScore( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1894,6 +1921,9 @@ function setDaoDanNum( %num, %count, %addScore )
 {
 	if(  %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1923,6 +1953,9 @@ function setDaoDanScore( %num, %count, %addScore )
 {
 	if(  %addScore< %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
@@ -1964,6 +1997,9 @@ function setAllScore( %num, %count, %addScore )
 {
 	if( %addScore < %num )
 	{
+        if (%count < 1) {
+            %count = 1;
+        }
 		%addScore += %count;
 		%score = %addScore;
 		
