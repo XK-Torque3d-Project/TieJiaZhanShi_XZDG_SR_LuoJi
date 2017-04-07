@@ -1536,6 +1536,10 @@ function showPlayerScore( )
 
 function setJiFenZong( %num, %count, %addScore )
 {
+    if (%num > 999999999) {
+        %num = 999999999;
+    }
+
 	if(  %addScore < %num )
 	{
         if (%count < 1) {
@@ -1590,6 +1594,10 @@ function setJiFenZong( %num, %count, %addScore )
 
 function setHitNum( %num, %count, %addScore )
 {
+    if (%num > 99) {
+        %num = 99;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1621,6 +1629,10 @@ function setHitNum( %num, %count, %addScore )
 
 function setHitScore( %num, %count, %addScore )
 {
+    if (%num > 999999) {
+        %num = 999999;
+    }
+
 	if(  %addScore < %num )
 	{
         if (%count < 1) {
@@ -1664,6 +1676,10 @@ function setHitScore( %num, %count, %addScore )
 
 function setNpcNum( %num, %count, %addScore )
 {
+    if (%num > 9999) {
+        %num = 9999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1702,6 +1718,10 @@ function setNpcNum( %num, %count, %addScore )
 
 function setNpcScore( %num, %count, %addScore )
 {
+    if (%num > 99999999) {
+        %num = 99999999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1752,6 +1772,10 @@ function setNpcScore( %num, %count, %addScore )
 
 function setBossNum( %num, %count, %addScore )
 {
+    if (%num > 99) {
+        %num = 99;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1784,6 +1808,10 @@ function setBossNum( %num, %count, %addScore )
 
 function setBossScore( %num, %count, %addScore )
 {
+    if (%num > 99999999) {
+        %num = 99999999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1834,6 +1862,10 @@ function setBossScore( %num, %count, %addScore )
 
 function setHealthNum( %num, %count, %addScore )
 {
+    if (%num > 999) {
+        %num = 999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1869,6 +1901,10 @@ function setHealthNum( %num, %count, %addScore )
 
 function setHealthScore( %num, %count, %addScore )
 {
+    if (%num > 99999999) {
+        %num = 99999999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
@@ -1919,6 +1955,10 @@ function setHealthScore( %num, %count, %addScore )
 
 function setDaoDanNum( %num, %count, %addScore )
 {
+    if (%num > 99) {
+        %num = 99;
+    }
+
 	if(  %addScore < %num )
 	{
         if (%count < 1) {
@@ -1951,6 +1991,10 @@ function setDaoDanNum( %num, %count, %addScore )
 
 function setDaoDanScore( %num, %count, %addScore )
 {
+    if (%num > 999999) {
+        %num = 999999;
+    }
+
 	if(  %addScore< %num )
 	{
         if (%count < 1) {
@@ -1995,6 +2039,10 @@ function setDaoDanScore( %num, %count, %addScore )
 
 function setAllScore( %num, %count, %addScore )
 {
+    if (%num > 999999999) {
+        %num = 999999999;
+    }
+
 	if( %addScore < %num )
 	{
         if (%count < 1) {
